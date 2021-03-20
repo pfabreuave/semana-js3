@@ -1,0 +1,145 @@
+*{width:883px;
+  font-family: 'Montserrat', sans-serif;
+}
+#main{
+	
+			width: 500px; 	
+			height: 100%;
+  			margin-left: auto;
+  			margin-right: auto;
+  
+}
+h1 {
+			color:#ffb300;		
+			font-size:89px;
+			font-weight: 900;
+			line-Height: 79px;
+	}
+h2 {
+			color:#ffb300;		
+			font-weight: 900;
+	}
+
+.txt {	
+	 		font-size:21px;	
+			font-weight: 500;
+			line-height:21px;
+	}
+.text {
+			font-size:28px;
+			font-family:helvetica;
+			font-weight:bold;
+			color:#71d90b;
+			text-transform:uppercase;
+	  }
+.parpadea {
+
+			text-align:center;
+    		border:1px dotted #000;
+    		padding:8px;
+    		color:#bb997d;
+			font-size:25px;
+			font-weight: 500;
+			line-height:21px;
+			text-transform:uppercase;
+
+		animation-name: parpadeo;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	  
+		-webkit-animation-name:parpadeo;
+		-webkit-animation-duration: 1s;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+	  }	
+
+	  @-moz-keyframes parpadeo{  
+		0% { opacity: 1.0; }
+		50% { opacity: 0.0; }
+		100% { opacity: 1.0; }
+	  }
+	  
+	  @-webkit-keyframes parpadeo {  
+		0% { opacity: 1.0; }
+		50% { opacity: 0.0; }
+		 100% { opacity: 1.0; }
+	  }
+	  
+	  @keyframes parpadeo {  
+		0% { opacity: 1.0; }
+		 50% { opacity: 0.0; }
+		100% { opacity: 1.0; }
+	  }
+
+.centrado{	
+			text-align:center;
+			border:1px dotted #000;
+			padding:8px;
+			color:#000000;
+			font-size:25px;
+			font-weight: 500;
+			line-height:21px;
+	}	
+.final{	
+			text-align:center;
+    		border:1px dotted #000;
+    		padding:8px;
+    		color:#bb997d;
+			font-size:25px;
+			font-weight: 500;
+			line-height:21px;
+			text-transform:uppercase;
+    	}
+.alerta{	
+			
+    		color:#40724f;
+    		
+		}
+p 	{		
+			color:#000000;
+			font-size:21px;
+			font-weight: 500;
+			line-height:21px;
+	}
+.txt {		
+			font-size:21px;	
+			font-weight: 500;
+	 		line-height:21px;
+	 }
+
+.formulario {	
+			color:#000000;
+			font-size:25px;
+			font-weight: 500;
+			line-height:21px;
+			}
+input	{	
+			display: block;
+		}
+
+
+form input {  
+  			height: 25px;    
+  		   }
+
+.quebra{
+            display: block;
+        }
+
+.espaco{
+            margin-bottom: 15px;
+        }
+.espaco_t{
+            margin-bottom: 15px;
+         }
+ form  {
+            border: 1px solid #000;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #eee;
+       }
+#dv_btns{     
+			display: flex;
+        }
+		/* 	sequência de programas modelo para captura, comparação e manipulação de dados */

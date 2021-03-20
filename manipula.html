@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Intervenções HTML</title>
+		<meta chaset="utf-8"/>
+  		<link rel="stylesheet" href="efectos.css">
+	</head>
+	<body>
+	<div id="main">	
+		<div>
+		<p class="centrado">Ingrese novos parceros</p>
+		<form id="parceForm" class="formulario">
+			<label>Nome:</label>
+            <input class="espaco quebra" id="nome" type="text" name="f_username"
+              	   maxlength="15" size="20">
+            <label>Sobrenome:</label>
+            <input class="espaco quebra" id="sobrenome" type="text" name="f_username"
+              	   maxlength="15" size="20">
+            <label>Edade:</label>
+            <input class="espaco quebra" id="edade" type="text" name="f_username"
+              	   maxlength="15" size="20">
+            <label>Pais Origen:</label>
+            <input class="espaco quebra" id="nacionalidade" type="text" name="f_username"
+              	   maxlength="15" size="20">  	   
+        	<div id="dv_btns">
+				<input type="button" value="Agregar" onclick="capturar();"/>				 
+				<input type="reset" name="f_btn_limpar" value="Limpar">
+				<input type="button" value="Sair" onclick="javascript:cerrar();"/>
+				<input type="button" value="Quem e mais velho?" onclick="javascript:enviaycerrar();"/>
+			</div>
+		</form>
+		</div>
+		<div>
+			<table class="table" id="tabla">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Sobrenome</th>
+						<th>Edade</th>
+						<th>Pais de Origen</th>
+					</tr>
+				</thead>
+				<tbody class="centrado">
+			</table>
+		</div>
+	</div>				
+		<script>
+			class Persona{
+				constructor(nome,sobrenome,edade,nacionalidade){
+						this.nome=nome;
+						this.sobrenome=sobrenome;
+						this.edade=edade;
+						this.nacionalidade=nacionalidade;
+				}
+
+			}
+			var edademaior = 0;
+			var i = 0;
+			var baseDatos= [];
+			function capturar() {	
+				var nomeCapturar = document.getElementById('nome').value;
+				var sobrenomeCapturar = document.getElementById('sobrenome').value;
+				var edadeCapturar = document.getElementById('edade').value;
+				var nacionalidadeCapturar = document.getElementById('nacionalidade').value;
+				novoItem = new Persona(nomeCapturar,sobrenomeCapturar,edadeCapturar,nacionalidadeCapturar);	
+				agregar(novoItem) 
+			}
+			function agregar(registro){	
+				baseDatos.push(registro);   
+				document.getElementById("tabla").innerHTML +=
+				'<tr id="registro_'+i+'" class="centrado"><td>'+registro.nome+'</td><td>'
+				+registro.sobrenome+'</td><td>'+registro.edade+'</td><td>'
+				+registro.nacionalidade+'</td></tr>'
+				i = Number(i + 1);					
+				if (novoItem.edade > edademaior) {
+					edademaior = Number(novoItem.edade);
+  				}
+				document.getElementById("parceForm").reset(); 
+			}
+			function enviaycerrar() {
+					for(i=0;baseDatos.length>i;i++){
+							
+						if (edademaior == baseDatos[i].edade){
+						
+							document.getElementById('registro_'+i).className = 'parpadea';
+						}
+						else {
+							document.getElementById('registro_'+i).className = 'centrado';
+						}		
+					}
+			}			
+			function cerrar() {			
+						window.close(); 
+			}							
+		
+		</script>
+	</body>
+</html>
+	
